@@ -22,6 +22,7 @@ if [ -z "$R_HOME" ]; then
   exit 1
 fi
 
+export RTOOLS_HOME="$(ls -d /c/rtools* | head -n 1)" 
 if [ -z "$RTOOLS_HOME" ]; then
   echo "Environment variable \"RTOOLS_HOME\" is not set!" 1>&2
   exit 1
@@ -103,8 +104,7 @@ export MAKEJ
   # Remove ITK-build to save space (if present)
   [ -d ITK-build ] && rm -rf ITK-build
 
-  # Move wrapped R package into the package root using R
-  "${RCALL}" -f "${PKGBASED}/sitkmove.R" --args \
-    "SimpleITK-build/Wrapping/R/Packaging/SimpleITK" \
-    "${PKGBASED}"
+  # Move wrapped R package into the package root
+  # TODO: sitkmove.R fails to move for Windows
+  cp -r SimpleITK-build/Wrapping/R/Packaging/SimpleITK/* "$PKGBASED/."
 )

@@ -71,5 +71,5 @@ jobs:
       env:
         ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS: 2
       run: |
-        $env:MAKEJ="4"
+        $env:MAKEJ="3"
         Rcmd.exe INSTALL --build .

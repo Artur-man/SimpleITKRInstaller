@@ -1,5 +1,8 @@
 on:
   push:
+    branches:
+      - addwin_temp
+  pull_request:
 
 jobs:
   R-build:

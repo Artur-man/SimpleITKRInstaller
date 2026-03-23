@@ -66,11 +66,11 @@ export MAKEJ
   if [ ! -d SimpleITK ]; then
     git clone "$SimpleITKGit"
     cd SimpleITK
-    git checkout "$SITKTAG"
+    git checkout release
   else
     cd SimpleITK
     git fetch --tags
-    git checkout "$SITKTAG"
+    git checkout release
   fi
 
   SITK_SRC="$(pwd)"

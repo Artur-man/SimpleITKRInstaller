@@ -66,18 +66,12 @@ export MAKEJ
   if [ ! -d SimpleITK ]; then
     git clone "$SimpleITKGit"
     cd SimpleITK
-<<<<<<< HEAD
-=======
     # git checkout "$SITKTAG"
->>>>>>> c686a8b (build SimpleITK with release)
     git checkout release
   else
     cd SimpleITK
     git fetch --tags
-<<<<<<< HEAD
-=======
     # git checkout "$SITKTAG"
->>>>>>> c686a8b (build SimpleITK with release)
     git checkout release
   fi
 
